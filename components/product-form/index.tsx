@@ -8,6 +8,7 @@ import { toast } from 'react-hot-toast';
 import { Button } from '@bigcommerce/components/button';
 import { getProduct } from '~/client/queries/get-product';
 import { ExistingResultType } from '~/client/util';
+import { klaviyoTrackAddToCart } from '~/integrations/klaviyo/klaviyo-track-add-to-cart';
 
 import { Link } from '../link';
 
@@ -63,6 +64,8 @@ export const ProductForm = ({ product }: { product: Product }) => {
       ),
       { icon: <Check className="text-success-secondary" /> },
     );
+
+    klaviyoTrackAddToCart(product);
   };
 
   return (
