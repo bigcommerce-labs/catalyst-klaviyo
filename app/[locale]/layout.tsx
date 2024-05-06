@@ -11,6 +11,7 @@ import '../globals.css';
 import { client } from '~/client';
 import { graphql } from '~/client/graphql';
 import { revalidate } from '~/client/revalidate-target';
+import { KlaviyoJS } from '~/integrations/klaviyo/klaviyo-js';
 
 import { Notifications } from '../notifications';
 import { Providers } from '../providers';
@@ -74,6 +75,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
+        <KlaviyoJS />
       </body>
     </html>
   );
