@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 
 import { getProduct } from '~/client/queries/get-product';
 import { LocaleType } from '~/i18n';
+import { KlaviyoTrackViewedProduct } from '~/integrations/klaviyo/klaviyo-track-viewed-product';
 
 import { BreadCrumbs } from './_components/breadcrumbs';
 import { Description } from './_components/description';
@@ -94,6 +95,8 @@ export default async function Product({ params, searchParams }: ProductPageProps
       <Suspense fallback={t('loading')}>
         <RelatedProducts productId={product.entityId} />
       </Suspense>
+
+      <KlaviyoTrackViewedProduct product={product} />
     </>
   );
 }
