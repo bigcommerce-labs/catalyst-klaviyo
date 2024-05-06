@@ -29,6 +29,9 @@ export default async function Home({ params: { locale } }: Props) {
 
       <div className="my-10">
         <NextIntlClientProvider locale={locale} messages={{ Product: messages.Product ?? {} }}>
+          {/* Klaviyo Embed Form */}
+          <div className="klaviyo-form-VXCJF7" />
+
           <ProductCardCarousel
             products={featuredProducts}
             showCart={false}
