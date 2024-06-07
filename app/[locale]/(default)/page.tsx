@@ -14,6 +14,8 @@ interface Props {
 }
 
 export default async function Home({ params: { locale } }: Props) {
+  const klaviyoFormID = process.env.NEXT_PUBLIC_KLAVIYO_FORM_ID ?? '';
+
   unstable_setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'Home' });
@@ -30,7 +32,7 @@ export default async function Home({ params: { locale } }: Props) {
       <div className="my-10">
         <NextIntlClientProvider locale={locale} messages={{ Product: messages.Product ?? {} }}>
           {/* Klaviyo Embed Form */}
-          <div className="klaviyo-form-VXCJF7" />
+          <div className={`klaviyo-form-${klaviyoFormID}`} />
 
           <ProductCardCarousel
             products={featuredProducts}
