@@ -21,7 +21,7 @@ pnpm create @bigcommerce/catalyst@latest init
 
 4. Now that your Klaviyo account is linked to your BigCommerce store, grab your Klaviyo Public Key from your Klaviyo account: [https://www.klaviyo.com/settings/account/api-keys](https://www.klaviyo.com/settings/account/api-keys), and then run the command below replacing `YOUR_PUBLIC_KEY` with the value retrieved from your account.
 
-5. To fetch your form ID, follow the instructions in the Klaviyo help article [here](https://help.klaviyo.com/hc/en-us/articles/360006897412#01H7ZC0C6Q5HPPB0DQKTNBHGRX)
+5. To fetch your form ID, follow the instructions in the Klaviyo help article [here](https://help.klaviyo.com/hc/en-us/articles/360006897412#01H7ZC0C6Q5HPPB0DQKTNBHGRX). Once you have your form ID, run the command below replacing `YOUR_FORM_ID` with the value retrieved from your account.
 
 ```bash
 echo "\nNEXT_PUBLIC_KLAVIYO_PUBLIC_KEY=YOUR_PUBLIC_KEY" >> .env.local
